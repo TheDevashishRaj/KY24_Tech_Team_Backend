@@ -1,0 +1,16 @@
+{% extends 'authen_app/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<h2>Hello There</h2>
+
+{% if user.is_authenticated %}
+    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+{% else %}
+    <p>Not Authorized! <br> Kindly Sign Up or Login First</p>
+{% endif %}
+
+{% endblock %}
